@@ -7,4 +7,5 @@ set(CMAKE_CXX_STANDARD 17)
 add_executable(000_cpp_17_test 000_initiation_programmation_cpp/000_cpp17_test/main.cpp)
 add_executable(001_hello_world 000_initiation_programmation_cpp/001_hello_world/main.cpp)
 add_executable(002_variables 000_initiation_programmation_cpp/002_variables/main.cpp)
+add_executable(003_read_input 000_initiation_programmation_cpp/003_read_input/main.cpp)
 
