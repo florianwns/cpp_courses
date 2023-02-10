@@ -1,2 +1,2 @@
-# c-_courses
+# cpp_courses
 Le cours en C++
