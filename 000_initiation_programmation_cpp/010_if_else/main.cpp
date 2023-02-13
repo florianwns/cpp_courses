@@ -20,5 +20,7 @@ int main() {
     cout << "not(7) returns " << not(7) << endl;
     cout << "not(0) returns " << not(0) << endl;
 
+    cout << "bool(1654) returns " << bool(1654)  << endl;
+
     return 0;
 }
