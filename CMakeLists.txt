@@ -14,3 +14,4 @@ add_executable(006_captain_age 000_initiation_programmation_cpp/006_captain_age/
 add_executable(007_recipe 000_initiation_programmation_cpp/007_recipe/main.cpp)
 add_executable(008_limits 000_initiation_programmation_cpp/008_limits/main.cpp)
 add_executable(009_swap 000_initiation_programmation_cpp/009_swap/main.cpp)
+add_executable(010_if_else 000_initiation_programmation_cpp/010_if_else/main.cpp)
