@@ -10,3 +10,4 @@ add_executable(002_variables 000_initiation_programmation_cpp/002_variables/main
 add_executable(003_read_input 000_initiation_programmation_cpp/003_read_input/main.cpp)
 add_executable(004_expr 000_initiation_programmation_cpp/004_expr/main.cpp)
 add_executable(005_imc 000_initiation_programmation_cpp/005_bmi/main.cpp)
+add_executable(006_captain_age 000_initiation_programmation_cpp/006_captain_age/main.cpp)
