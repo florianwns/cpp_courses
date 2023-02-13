@@ -19,5 +19,6 @@ int main() {
 
     cout << "not(7) returns " << not(7) << endl;
     cout << "not(0) returns " << not(0) << endl;
+
     return 0;
 }
