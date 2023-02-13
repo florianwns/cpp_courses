@@ -46,5 +46,8 @@ int main() {
     cout << "M_PI = " << M_PI  << endl;
     cout << "M_E = " << M_E  << endl;
 
-    return 0;
+
+    // https://stackoverflow.com/questions/5029840/convert-char-to-int-in-c-and-c
+    const uint8_t k(354);
+    cout << "uint8_t(354) = " << (int)k << endl;
 }
