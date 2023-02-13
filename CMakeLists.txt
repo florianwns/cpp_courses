@@ -11,3 +11,4 @@ add_executable(003_read_input 000_initiation_programmation_cpp/003_read_input/ma
 add_executable(004_expr 000_initiation_programmation_cpp/004_expr/main.cpp)
 add_executable(005_imc 000_initiation_programmation_cpp/005_bmi/main.cpp)
 add_executable(006_captain_age 000_initiation_programmation_cpp/006_captain_age/main.cpp)
+add_executable(007_recipe 000_initiation_programmation_cpp/007_recipe/main.cpp)
