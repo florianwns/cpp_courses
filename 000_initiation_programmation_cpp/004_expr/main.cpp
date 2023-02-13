@@ -43,11 +43,17 @@ int main() {
     cout << "6.3489 % 6 = " << remainder(6.3489, 6) << endl;
 
     cout << pow(2.1, 2.1) << endl;
-    cout << "M_PI = " << M_PI  << endl;
-    cout << "M_E = " << M_E  << endl;
+    cout << "M_PI = " << M_PI << endl;
+    cout << "M_E = " << M_E << endl;
 
 
     // https://stackoverflow.com/questions/5029840/convert-char-to-int-in-c-and-c
     const uint8_t k(354);
-    cout << "uint8_t(354) = " << (int)k << endl;
+    cout << "uint8_t(354) = " << (int) k << endl;
+
+
+    constexpr double pi(3.141592653589793238463);
+    cout << "constant of pi " << pi << endl;
+
+    return 0;
 }
