@@ -18,3 +18,4 @@ add_executable(010_if_else 000_initiation_programmation_cpp/010_if_else/main.cpp
 add_executable(011_polynomial 000_initiation_programmation_cpp/011_polynomial/main.cpp)
 add_executable(012_expr 000_initiation_programmation_cpp/012_expr/main.cpp)
 add_executable(013_bike 000_initiation_programmation_cpp/013_bike/main.cpp)
+add_executable(014_mushrooms 000_initiation_programmation_cpp/014_mushrooms/main.cpp)
