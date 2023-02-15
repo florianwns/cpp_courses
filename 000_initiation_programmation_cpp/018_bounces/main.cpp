@@ -13,16 +13,22 @@ int main() {
     double speed, height, last_height, bounce_factor;
     int num_bounce;
 
-    cout << "Initial Height : ";
-    cin >> height;
+    do{
+        cout << "Initial Height : ";
+        cin >> height;
+    } while(height <= 0.);
 
-    cout << "Bounce factor: ";
-    cin >> bounce_factor;
+    do{
+        cout << "Bounce factor: ";
+        cin >> bounce_factor;
+    } while(bounce_factor < 0. or bounce_factor >= 1.);
 
-    cout << "Number of bounces : ";
-    cin >> num_bounce;
+    do{
+        cout << "Number of bounces : ";
+        cin >> num_bounce;
+    } while(num_bounce < 0);
 
-    speed = sqrt(2 * height * gravity);
+    speed = sqrt(2. * height * gravity);
     for(int(i) = 0; i < num_bounce; ++i){
         speed *= bounce_factor;
     }
