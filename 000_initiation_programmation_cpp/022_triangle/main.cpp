@@ -17,7 +17,6 @@ int main() {
     for (int i(num - 1), j(1); i >= 0; --i, j += 2) {
         cout << string(i, ' ')
              << string(j, '*')
-             << string(i, ' ')
              << endl;
     }
 
