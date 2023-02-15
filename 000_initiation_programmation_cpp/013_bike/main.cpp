@@ -31,11 +31,11 @@ int main()
         int num_hours[] = {0, 0};
         constexpr int hourly_prices[] = {1, 2};
 
-        for (int h = debut; h < fin; h++) {
+        for (int h(debut); h < fin; ++h) {
             num_hours[(h >= 7 and h < 17)]++;
         }
 
-        for(int i = 0; i < 2; i++){
+        for(int i(0); i < 2; ++i){
             if(num_hours[i] > 0){
                 cout << num_hours[i] << " heure(s) au tarif horaire de " << hourly_prices[i] << " franc(s)" << endl;
                 total_price += num_hours[i] * hourly_prices[i] ;
