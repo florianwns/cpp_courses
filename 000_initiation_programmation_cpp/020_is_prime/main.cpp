@@ -41,6 +41,6 @@ int main() {
         cout << n << " is not prime, because it can be divided by "
              << divider << endl;
     }
-    
+
     return 0;
 }
