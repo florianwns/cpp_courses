@@ -14,9 +14,9 @@ int main() {
     do {
         cout << "Entrez le nombre de notes : ";
         cin >> num_notes;
-        is_invalid = num_notes <= 0;
+        is_invalid = num_notes < 2 or num_notes > 10;
         if(is_invalid){
-            cout << "Le nombre de notes doit être positif" << endl;
+            cout << "Le nombre de notes doit être compris entre 2 et 10" << endl;
         }
     } while (is_invalid);
 
