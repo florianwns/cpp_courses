@@ -9,8 +9,8 @@ using namespace std;
 
 
 int main() {
-
-    double speed, height, last_height, bounce_factor, gravity(9.81);
+    constexpr double gravity(9.81);
+    double speed, height, last_height, bounce_factor;
     int num_bounce;
 
     cout << "Initial Height : ";
