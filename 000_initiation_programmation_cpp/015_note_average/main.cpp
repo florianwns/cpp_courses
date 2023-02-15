@@ -3,13 +3,17 @@
 //
 
 #include <iostream>
+
 using namespace std;
 
-int main(){
+int main() {
     double note, sum(0.);
-    int num_notes(4);
+    int num_notes;
 
-    for(int i(1); i <= num_notes; ++i){
+    cout << "Entrez le nombre de notes : ";
+    cin >> num_notes;
+
+    for (int i(1); i <= num_notes; ++i) {
         cout << "Entrez la note n° " << i << " : ";
         cin >> note;
         sum += note;
