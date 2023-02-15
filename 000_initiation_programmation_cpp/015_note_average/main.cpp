@@ -13,13 +13,15 @@ int main() {
     cout << "Entrez le nombre de notes : ";
     cin >> num_notes;
 
-    for (int i(1); i <= num_notes; ++i) {
-        cout << "Entrez la note n° " << i << " : ";
-        cin >> note;
-        sum += note;
-    }
+    if (num_notes > 0) {
+        for (int i(1); i <= num_notes; ++i) {
+            cout << "Entrez la note n° " << i << " : ";
+            cin >> note;
+            sum += note;
+        }
 
-    cout << "Average : " << sum / num_notes << endl;
+        cout << "Average : " << sum / num_notes << endl;
+    }
 
     return 0;
 }
