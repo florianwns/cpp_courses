@@ -24,3 +24,4 @@ add_executable(016_find_number 000_initiation_programmation_cpp/016_find_number/
 add_executable(017_scope 000_initiation_programmation_cpp/017_scope/main.cpp)
 add_executable(018_bounces 000_initiation_programmation_cpp/018_bounces/main.cpp)
 add_executable(019_bounces_2 000_initiation_programmation_cpp/019_bounces_2/main.cpp)
+add_executable(020_is_prime 000_initiation_programmation_cpp/020_is_prime/main.cpp)

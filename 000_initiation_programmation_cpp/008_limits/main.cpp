@@ -17,6 +17,7 @@ int main() {
          << numeric_limits<uint32_t>::min() << " <= uint32_t <= " << numeric_limits<uint32_t>::max() << endl
          << numeric_limits<float>::min() << " <= float <= " << numeric_limits<float>::max() << endl
          << numeric_limits<double>::min() << " <= double <= " << numeric_limits<double>::max() << endl
-         << numeric_limits<long double>::min() << " <= long double <= " << numeric_limits<long double>::max() << endl;
+         << numeric_limits<long double>::min() << " <= long double <= " << numeric_limits<long double>::max() << endl
+        << numeric_limits<unsigned long long int>::min() << " <= unsigned long long int <= " << numeric_limits<unsigned long long int>::max() << endl;
     return 0;
 }
