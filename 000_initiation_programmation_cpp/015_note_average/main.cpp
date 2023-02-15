@@ -9,7 +9,7 @@ int main(){
     double note, sum(0.);
     int num_notes(4);
 
-    for(int i(0); i < num_notes; ++i){
+    for(int i(1); i <= num_notes; ++i){
         cout << "Entrez la note n° " << i << " : ";
         cin >> note;
         sum += note;
