@@ -26,3 +26,4 @@ add_executable(018_bounces 000_initiation_programmation_cpp/018_bounces/main.cpp
 add_executable(019_bounces_2 000_initiation_programmation_cpp/019_bounces_2/main.cpp)
 add_executable(020_is_prime 000_initiation_programmation_cpp/020_is_prime/main.cpp)
 add_executable(021_bank_loan 000_initiation_programmation_cpp/021_bank_loan/main.cpp)
+add_executable(022_triangle 000_initiation_programmation_cpp/022_triangle/main.cpp)
