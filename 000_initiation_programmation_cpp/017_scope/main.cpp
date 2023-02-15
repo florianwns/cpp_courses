@@ -8,6 +8,7 @@ using namespace std;
 
 
 int main() {
+    // Don't do that
     int j(123);
     cout << "j is " << j << endl;
     {
