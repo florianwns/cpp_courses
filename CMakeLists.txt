@@ -22,3 +22,4 @@ add_executable(014_mushrooms 000_initiation_programmation_cpp/014_mushrooms/main
 add_executable(015_note_average 000_initiation_programmation_cpp/015_note_average/main.cpp)
 add_executable(016_find_number 000_initiation_programmation_cpp/016_find_number/main.cpp)
 add_executable(017_scope 000_initiation_programmation_cpp/017_scope/main.cpp)
+add_executable(018_bounce 000_initiation_programmation_cpp/018_bounce/main.cpp)
