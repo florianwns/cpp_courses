@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
     constexpr double gravity(9.81);
-    double speed, height, last_height, bounce_factor;
+    double speed, height, final_height, bounce_factor;
     int num_bounce;
 
     do{
@@ -21,7 +21,7 @@ int main() {
     do{
         cout << "Bounce factor: ";
         cin >> bounce_factor;
-    } while(bounce_factor < 0. or bounce_factor >= 1.);
+    } while(bounce_factor <= 0. or bounce_factor >= 1.);
 
     do{
         cout << "Number of bounces : ";
@@ -32,9 +32,9 @@ int main() {
     for(int(i) = 0; i < num_bounce; ++i){
         speed *= bounce_factor;
     }
-    last_height = speed * speed / (2 * gravity);
-    cout << "Last height after " << num_bounce
-         << " bounces : " << last_height
+    final_height = speed * speed / (2 * gravity);
+    cout << "Final height after " << num_bounce
+         << " bounces : " << final_height
          << endl;
 
     return 0;
