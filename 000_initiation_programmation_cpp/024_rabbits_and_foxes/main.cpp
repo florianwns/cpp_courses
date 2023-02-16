@@ -67,17 +67,18 @@ int main()
       cout << "taux d'attaque au départ en % (entre 0.5 et 6) ? ";
       cin >> taux_attaque_debut;
   } while (taux_attaque_debut < 0.5 or taux_attaque_debut > 6);
-  taux_attaque_debut /= 100;
 
   double taux_attaque_fin(0.0);
   do {
-      cout << "taux d'attaque à la fin  en % (entre 1 et 6) ? ";
+      cout << "taux d'attaque à la fin  en % (entre "<< taux_attaque_debut <<" et 6) ? ";
       cin >> taux_attaque_fin;
-  } while (taux_attaque_fin < 1 or taux_attaque_debut > 6);
+  } while (taux_attaque_fin < taux_attaque_debut or taux_attaque_debut > 6);
+
+  taux_attaque_debut /= 100;
   taux_attaque_fin /= 100;
 
-  for (double taux_attaque(taux_attaque_debut); taux_attaque <= taux_attaque_fin; taux_attaque += 0.01) {
-    cout << endl << "***** Le taux d''attaque vaut " << taux_attaque * 100 << "%" << endl;
+  for (double taux_attaque(taux_attaque_debut); taux_attaque < taux_attaque_fin; taux_attaque += 0.01) {
+    cout << endl << "***** Le taux d'attaque vaut " << taux_attaque * 100 << "%" << endl;
 
     num_renards = renards_i;
     num_lapins = lapins_i;
