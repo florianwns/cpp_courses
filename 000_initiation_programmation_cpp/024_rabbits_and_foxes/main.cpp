@@ -70,7 +70,8 @@ int main()
 
   double taux_attaque_fin(0.0);
   do {
-      cout << "taux d'attaque à la fin  en % (entre "<< taux_attaque_debut <<" et 6) ? ";
+      cout << "taux d'attaque à la fin  en % (entre " << taux_attaque_debut;
+      cout << " et 6) ? ";
       cin >> taux_attaque_fin;
   } while (taux_attaque_fin < taux_attaque_debut or taux_attaque_debut > 6);
 
