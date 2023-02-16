@@ -28,3 +28,4 @@ add_executable(020_is_prime 000_initiation_programmation_cpp/020_is_prime/main.c
 add_executable(021_bank_loan 000_initiation_programmation_cpp/021_bank_loan/main.cpp)
 add_executable(022_triangle 000_initiation_programmation_cpp/022_triangle/main.cpp)
 add_executable(023_number_game 000_initiation_programmation_cpp/023_number_game/main.cpp)
+add_executable(024_rabbits_and_foxes 000_initiation_programmation_cpp/024_rabbits_and_foxes/main.cpp)
