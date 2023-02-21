@@ -97,36 +97,97 @@ void message_perdu(char c1, char c2, char c3, char c4)
 // ======================================================================
 bool couleur_valide(char c)
 {
+    const string valid_chars = ".RGBCYM";
+    return valid_chars.find(c) != string::npos;
 }
 
 // ======================================================================
-bool verifier(// A remplir
-             )
+bool verifier(const char c, char &r, int &score)
 {
+    const bool is_valid = (c == r);
+    score += is_valid;
+    if(is_valid){
+        r = 'x';
+    }
+    return is_valid;
 }
 
 // ======================================================================
-void apparier(// A remplir
-             )
+void apparier(const char c1,
+              char &r1,
+              char &r2,
+              char &r3,
+              int &score)
 {
+    verifier(c1, r1, score) or verifier(c1, r2, score) or verifier(c1, r3, score);
 }
 
 // ======================================================================
 void afficher_reponses(char c1, char c2, char c3, char c4,
                        char r1, char r2, char r3, char r4)
 {
+    int valid_chars(0), nb_bien_placees(0), nb_mal_placees(0);
+
+    valid_chars = verifier(c1, r1, nb_bien_placees);
+    valid_chars += verifier(c2, r2, nb_bien_placees) * 2;
+    valid_chars += verifier(c3, r3, nb_bien_placees) * 4;
+    valid_chars += verifier(c4, r4, nb_bien_placees) * 8;
+
+    if(not(valid_chars & 1)){
+        apparier(c1, r2, r3, r4, nb_mal_placees);
+    };
+
+    if(not(valid_chars & 2)){
+        apparier(c2, r1, r3, r4, nb_mal_placees);
+    };
+
+    if(not(valid_chars & 4)){
+        apparier(c3, r1, r2, r4, nb_mal_placees);
+    };
+
+    if(not(valid_chars & 8)){
+        apparier(c4, r1, r2, r3, nb_mal_placees);
+    };
+
+
+    afficher(nb_bien_placees, '#');
+    afficher( nb_mal_placees, '+');
+    afficher(4 - nb_bien_placees - nb_mal_placees, '-');
 }
 
 // ======================================================================
 bool gagne(char c1, char c2, char c3, char c4,
            char r1, char r2, char r3, char r4)
 {
+    return c1 == r1 and c2 == r2 and c3 == r3 and c4 == r4;
 }
 
 // ======================================================================
-void jouer(// A remplir
-          )
+void jouer(int coup_max = 8)
 {
+    const char r1(tirer_couleur()),
+         r2(tirer_couleur()),
+         r3(tirer_couleur()),
+         r4(tirer_couleur());
+
+    bool a_gagne;
+    int nb_coups(0);
+
+    do{
+        const char c1(lire_couleur()),
+                   c2(lire_couleur()),
+                   c3(lire_couleur()),
+                   c4(lire_couleur());
+
+        afficher_coup(c1, c2, c3, c4, r1, r2, r3, r4);
+        a_gagne = gagne(c1, c2, c3, c4, r1, r2, r3, r4);
+    } while(++nb_coups < coup_max and not a_gagne);
+
+    if(a_gagne){
+        message_gagne(nb_coups);
+    } else {
+        message_perdu(r1, r2, r3, r4);
+    }
 }
 
 /*******************************************
