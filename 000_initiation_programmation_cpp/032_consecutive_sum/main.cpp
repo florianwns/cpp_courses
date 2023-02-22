@@ -40,7 +40,7 @@ int main() {
 }
 
 int somme_consecutifs_max(const vector<int> &v) {
-    int sum(0), best(0);
+    int sum(0), best(INT_MIN);
     for (const int e: v) {
         sum = (e == 0) ? 0 : sum + e;
         if (sum > best) {
@@ -52,7 +52,7 @@ int somme_consecutifs_max(const vector<int> &v) {
 
 vector<size_t> lignes_max(const vector<vector<int>> &v) {
     vector<size_t> res;
-    int best(0);
+    int best(INT_MIN);
     for (size_t i(0); i < v.size(); ++i) {
         const int max = somme_consecutifs_max(v[i]);
         if (max > best) {
