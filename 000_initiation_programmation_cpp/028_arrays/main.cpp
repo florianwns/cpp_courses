@@ -20,7 +20,7 @@ int main() {
 
     // Ajoute une element
     ages.push_back(123);
-    //retire un element
+    // Retire un element
     ages.pop_back();
 
     // calcul de la moyenne
