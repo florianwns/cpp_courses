@@ -7,16 +7,11 @@
 
 using namespace std;
 
+void fill(vector<int> &vec, size_t size = 4);
 
 int main() {
     vector<int> ages(5);
-
-    for (auto &age : ages) {
-        do {
-            cout << "Age de l'étudiant : ";
-            cin >> age;
-        } while (age <= 0);
-    }
+    fill(ages, ages.size());
 
     // Ajoute une element
     ages.push_back(123);
@@ -41,4 +36,24 @@ int main() {
     ages.clear();
 
     return 0;
+}
+
+
+void fill(vector<int> &vec, size_t size) {
+    // Vide le vecteur
+    vec.clear();
+
+    cout << "Saisie de " << size << " valeurs " << endl;
+    while (vec.size() < size) {
+        cout << "Age de l'étudiant n°" << vec.size() + 1 << " : ";
+        int age;
+        cin >> age;
+        if (age < 0 and not vec.empty()) {
+            vec.pop_back();
+        } else if (age == 0) {
+            vec.clear();
+        } else if (age > 0) {
+            vec.push_back(age);
+        }
+    }
 }
