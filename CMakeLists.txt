@@ -32,3 +32,4 @@ add_executable(024_rabbits_and_foxes 000_initiation_programmation_cpp/024_rabbit
 add_executable(025_read_and_say 000_initiation_programmation_cpp/025_read_and_say/main.cpp)
 add_executable(026_paques 000_initiation_programmation_cpp/026_paques/main.cpp)
 add_executable(027_mastermind 000_initiation_programmation_cpp/027_mastermind/main.cpp)
+add_executable(028_arrays 000_initiation_programmation_cpp/028_arrays/main.cpp)
