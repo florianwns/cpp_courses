@@ -36,3 +36,5 @@ add_executable(028_vectors 000_initiation_programmation_cpp/028_vectors/main.cpp
 add_executable(029_strings 000_initiation_programmation_cpp/029_strings/main.cpp)
 add_executable(030_structs 000_initiation_programmation_cpp/030_structs/main.cpp)
 add_executable(031_jules_crypto 000_initiation_programmation_cpp/031_jules_crypto/main.cpp)
+add_executable(032_consecutive_sum 000_initiation_programmation_cpp/032_consecutive_sum/main.cpp)
+add_executable(033_fence_the_property 000_initiation_programmation_cpp/033_fence_the_property/main.cpp)
