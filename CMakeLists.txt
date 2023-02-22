@@ -33,3 +33,4 @@ add_executable(025_read_and_say 000_initiation_programmation_cpp/025_read_and_sa
 add_executable(026_paques 000_initiation_programmation_cpp/026_paques/main.cpp)
 add_executable(027_mastermind 000_initiation_programmation_cpp/027_mastermind/main.cpp)
 add_executable(028_vectors 000_initiation_programmation_cpp/028_vectors/main.cpp)
+add_executable(029_strings 000_initiation_programmation_cpp/029_strings/main.cpp)
