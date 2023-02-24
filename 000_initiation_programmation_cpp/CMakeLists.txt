@@ -35,4 +35,5 @@ add_executable(000_031_jules_crypto 031_jules_crypto/main.cpp)
 add_executable(000_032_consecutive_sum 032_consecutive_sum/main.cpp)
 add_executable(000_033_fence_the_property 033_fence_the_property/main.cpp)
 add_executable(000_034_pointers 034_pointers/main.cpp)
+add_executable(000_035_lambda_expr 035_lambda_expr/main.cpp)
 
