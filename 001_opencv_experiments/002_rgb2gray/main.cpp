@@ -3,6 +3,7 @@
 //
 
 #include "opencv2/core.hpp"
+#include "opencv2/imgproc.hpp"
 #include "opencv2/videoio.hpp"
 #include "opencv2/highgui.hpp"
 
@@ -20,7 +21,6 @@ using namespace std;
 enum processings {
     PROC_NONE,
     PROC_CV_RGB2GRAY,
-    PROC_HOMEMADE_RGB2GRAY,
     PROC_LENGTH,
 };
 
@@ -43,7 +43,7 @@ int main() {
     int proc = PROC_NONE;
 
     // Grab frame
-    cv::Mat frame, res;
+    cv::Mat frame;
     cout << "Start grabbing" << endl
          << "Press 'q' to terminate" << endl;
 
@@ -58,13 +58,15 @@ int main() {
         }
 
         switch (proc) {
-            case PROC_NONE:
-                frame.copyTo(res);
+            case PROC_CV_RGB2GRAY:
+                cv::cvtColor(frame, frame, cv::COLOR_RGB2GRAY);
+                break;
+            default:
                 break;
         }
 
         // Show live and wait for a key with timeout long enough to show images
-        cv::imshow("Live", res);
+        cv::imshow("Live", frame);
 
         // Wait 'q' key to terminate
         switch (cv::waitKey(5)) {
@@ -72,11 +74,9 @@ int main() {
                 return 0;
             case KEY_UP:
             case KEY_LEFT:
-                proc = (proc + 1) % PROC_LENGTH;
-                break;
             case KEY_RIGHT:
             case KEY_DOWN:
-                proc = (proc - 1) % PROC_LENGTH;
+                proc = (proc + 1) % PROC_LENGTH;
                 break;
         }
     }
