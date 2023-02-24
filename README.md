@@ -3,6 +3,9 @@
 C++ courses and experimentations.
 
 
+<hr> 
+
+
 
 ## 📦 - Conan - software package manager for C++
 
@@ -25,13 +28,18 @@ conan install . -s build_type=Debug --install-folder=cmake-build-debug
 
 source : https://docs.conan.io/1/integrations/ide/clion.html
 
-<hr>
 
 ### create a dependencies graph
 
 ```
 conan info . --graph=graph.html
 ```
+
+### Search package
+
+Go to https://conan.io/center/ to find a package.
+
+<hr> 
 
 
 ##  - Mojave issues 
