@@ -10,6 +10,7 @@
 #include <iostream>
 
 using namespace std;
+using namespace cv;
 
 #define KEY_UP 0
 #define KEY_DOWN 1
@@ -18,18 +19,36 @@ using namespace std;
 #define KEY_Q 113
 
 
-enum processings {
-    PROC_NONE,
-    PROC_CV_RGB2GRAY,
-    PROC_LENGTH,
+enum Processing {
+    kProcNone,
+    kProcCvRGB2GRAY,
+    kProcHomeRGB2GRAY,
+    KProcLength,
 };
 
+
+Mat rgb2gray(const Mat &bgr) {
+    // Accept only BGR matrices
+    CV_Assert(bgr.type() == CV_8UC3);
+
+    // Create the grayscale Matrix, fill with zeros
+    Mat gray(bgr.rows, bgr.cols, CV_8UC1, Scalar(0));
+
+    // Use iterator to access to pixel values
+    auto bgr_it = bgr.begin<Vec3b>(), bgr_end = bgr.end<Vec3b>();
+    auto gray_it = gray.begin<uchar>();
+    for (; bgr_it != bgr_end; ++bgr_it, ++gray_it) {
+        *gray_it = (*bgr_it)[0] * 0.1140 + (*bgr_it)[1] * 0.5870 + (*bgr_it)[2] * 0.2989;
+    }
+    return gray;
+}
+
 int main() {
-    cv::VideoCapture cam;
+    VideoCapture cam;
     const int device_id = 0;        // 0 = open default camera
 
-    // specify the cv::VideoCaptureAPIs
-    const int api = cv::CAP_ANY;    // 0 = autodetect
+    // specify the VideoCaptureAPIs
+    const int api = CAP_ANY;    // 0 = autodetect
 
     // Open selected camera
     cam.open(device_id, api);
@@ -40,15 +59,14 @@ int main() {
         return -1;
     }
 
-    int proc = PROC_NONE;
 
-    // Grab frame
-    cv::Mat frame;
     cout << "Start grabbing" << endl
          << "Press 'q' to terminate" << endl;
 
+    Mat frame;
+    int proc = kProcNone;
     while (true) {
-        // Wait for a new frame from camera and store it into 'frame'
+        // Grab frame
         cam.read(frame);
 
         // Check if we succeeded
@@ -58,25 +76,28 @@ int main() {
         }
 
         switch (proc) {
-            case PROC_CV_RGB2GRAY:
-                cv::cvtColor(frame, frame, cv::COLOR_RGB2GRAY);
+            case kProcCvRGB2GRAY:
+                cvtColor(frame, frame, COLOR_RGB2GRAY);
+                break;
+            case kProcHomeRGB2GRAY:
+                frame = rgb2gray(frame);
                 break;
             default:
                 break;
         }
 
         // Show live and wait for a key with timeout long enough to show images
-        cv::imshow("Live", frame);
+        imshow("Live", frame);
 
         // Wait 'q' key to terminate
-        switch (cv::waitKey(5)) {
+        switch (waitKey(5)) {
             case KEY_Q:
                 return 0;
             case KEY_UP:
             case KEY_LEFT:
             case KEY_RIGHT:
             case KEY_DOWN:
-                proc = (proc + 1) % PROC_LENGTH;
+                proc = (proc + 1) % Processing::KProcLength;
                 break;
         }
     }
