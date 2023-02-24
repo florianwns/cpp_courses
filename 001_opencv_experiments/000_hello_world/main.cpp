@@ -2,8 +2,9 @@
 // Created by Florian Rey on 24/02/2023.
 //
 
-#include <iostream>
 #include "opencv2/opencv.hpp"
+
+#include <iostream>
 
 using namespace std;
 using namespace cv;
