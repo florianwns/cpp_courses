@@ -1,4 +1,4 @@
-# Opencv experimentations
+# Opencv experiments
 
 
 ### CmakeList.txt 

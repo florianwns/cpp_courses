@@ -1,6 +1,6 @@
 # CPP Courses
 
-C++ courses and experimentations.
+C++ courses and experiments.
 
 
 <hr> 
