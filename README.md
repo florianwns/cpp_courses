@@ -1,2 +1,3 @@
 # cpp_courses
-Le cours en C++
+
+C++ courses and experimentations.
