@@ -10,6 +10,6 @@ else()
     message(WARNING "The file conanbuildinfo.cmake doesn't exist, you have to run conan install first")
 endif()
 
-add_subdirectory("000_initiation_programmation")
+add_subdirectory("000_epfl_introduction_to_programming")
 add_subdirectory("001_opencv_experiments")
 add_subdirectory("002_boost_experiments")
