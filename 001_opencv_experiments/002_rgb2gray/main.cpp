@@ -21,13 +21,16 @@ using namespace cv;
 
 enum Processing {
     kProcNone,
-    kProcCvRGB2GRAY,
-    kProcHomeRGB2GRAY,
+    kProcCvRGB2Gray,
+    kProcCvThreshold,
+    kProcHomeRGB2Gray,
+    kProcHomeRGB2SortedGray,
+    kProcHomeThreshold,
     KProcLength,
 };
 
 
-Mat rgb2gray(const Mat &bgr) {
+Mat bgr2gray(const Mat &bgr) {
     // Accept only BGR matrices
     CV_Assert(bgr.type() == CV_8UC3);
 
@@ -40,6 +43,29 @@ Mat rgb2gray(const Mat &bgr) {
     for (; bgr_it != bgr_end; ++bgr_it, ++gray_it) {
         *gray_it = (*bgr_it)[0] * 0.1140 + (*bgr_it)[1] * 0.5870 + (*bgr_it)[2] * 0.2989;
     }
+    return gray;
+}
+
+Mat bgr2sorted_gray(const Mat &bgr) {
+    Mat gray = bgr2gray(bgr);
+
+    // Use iterator to access to pixel values
+    auto it = gray.begin<uchar>(), end = gray.end<uchar>();
+    sort(it, end, greater<uchar>{});
+
+    return gray;
+}
+
+
+Mat binarize(const Mat &bgr) {
+    Mat gray = bgr2gray(bgr);
+
+    // Use iterator to access to pixel values
+    auto it = gray.begin<uchar>(), end = gray.end<uchar>();
+    for (; it != end; ++it) {
+        *it = *it < 128 ? 0 : 255;
+    }
+
     return gray;
 }
 
@@ -63,7 +89,7 @@ int main() {
     cout << "Start grabbing" << endl
          << "Press 'q' to terminate" << endl;
 
-    Mat frame;
+    Mat frame, res;
     int proc = kProcNone;
     while (true) {
         // Grab frame
@@ -76,18 +102,29 @@ int main() {
         }
 
         switch (proc) {
-            case kProcCvRGB2GRAY:
-                cvtColor(frame, frame, COLOR_RGB2GRAY);
+            case kProcCvRGB2Gray:
+                cvtColor(frame, res, COLOR_RGB2GRAY);
                 break;
-            case kProcHomeRGB2GRAY:
-                frame = rgb2gray(frame);
+            case kProcCvThreshold:
+                res = bgr2gray(frame);
+                adaptiveThreshold(res, res, 255, ADAPTIVE_THRESH_GAUSSIAN_C, THRESH_BINARY, 3, 2);
+                break;
+            case kProcHomeRGB2Gray:
+                res = bgr2gray(frame);
+                break;
+            case kProcHomeRGB2SortedGray:
+                res = bgr2sorted_gray(frame);
+                break;
+            case kProcHomeThreshold:
+                res = binarize(frame);
                 break;
             default:
+                res = frame;
                 break;
         }
 
         // Show live and wait for a key with timeout long enough to show images
-        imshow("Live", frame);
+        imshow("Live", res);
 
         // Wait 'q' key to terminate
         switch (waitKey(5)) {
