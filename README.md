@@ -23,7 +23,7 @@ Install conan directly with pip ```pip3 instal conan@1.59```.
 Create a `conanfile.txt`then install yours libs like this :
 
 ```
-conan install . -s build_type=Debug --install-folder=cmake-build-debug
+conan install . -s build_type=Debug --build=missing --install-folder=cmake-build-debug
 ```
 
 source : https://docs.conan.io/1/integrations/ide/clion.html
