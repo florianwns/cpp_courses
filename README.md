@@ -14,9 +14,9 @@ C++ courses and experiments.
 
 ### Install conan
 
-For mac os :
+Install conan directly with pip ```pip3 instal conan@1.59```.
 
-```brew install conan```
+> Since conan v2 does not have opencv lib, we use the latest v1 version.
 
 ### Install your libs
 

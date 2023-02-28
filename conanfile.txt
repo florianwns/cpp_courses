@@ -2,8 +2,5 @@
 opencv/4.5.5
 boost/1.81.0
 
-[options]
-opencv:contrib=True
-
 [generators]
 cmake
