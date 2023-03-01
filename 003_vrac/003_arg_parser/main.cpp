@@ -10,7 +10,6 @@ void on_age(int age)
 
 int main(int argc, const char *argv[])
 {
-{
     try
     {
         options_description desc{"Options"};
