@@ -5,12 +5,9 @@ C++ courses and experiments.
 
 <hr> 
 
-
-
 ## 📦 - Conan - software package manager for C++
 
 [Conan](https://conan.io/) can install packages juste with a `conanfile.txt`.
-
 
 ### Install conan
 
@@ -28,7 +25,6 @@ conan install . -s build_type=Debug --build=missing --install-folder=cmake-build
 
 source : https://docs.conan.io/1/integrations/ide/clion.html
 
-
 ### create a dependencies graph
 
 ```
@@ -41,8 +37,7 @@ Go to https://conan.io/center/ to find a package.
 
 <hr> 
 
-
-##  - Mojave issues 
+##  - Mojave issues
 
 If headers are missing like this, please follow instructions
 
@@ -52,7 +47,6 @@ fatal error: 'wchar.h' file not found
 ``` 
 
 source : https://stackoverflow.com/questions/26185978/macos-wchar-h-file-not-found/26185979#26185979
-
 
 ```
 code-select --install

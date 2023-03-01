@@ -1,6 +1,9 @@
 [requires]
 opencv/4.5.5
 boost/1.81.0
+gsl/2.7
+date/3.0.1
+arrow/10.0.1
 
 [options]
 opencv:contrib=True
